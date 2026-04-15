@@ -325,6 +325,14 @@
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 1.5rem;
+      align-items: stretch;
+    }
+    @media (min-width: 901px) {
+      .projects-grid .project-card:last-child {
+        grid-column: 1 / -1;
+        max-width: 537px;
+        justify-self: center;
+      }
     }
     /* Wide card layout removed — only 2 project cards now */
 
@@ -366,8 +374,8 @@
       flex-shrink: 0;
       background: var(--bg3);
     }
-    /* Wide card gets taller preview */
-    .projects-grid .project-card:last-child .project-preview { height: 260px; }
+    /* Keep two-card layout balanced when only two cards remain */
+    .project-preview { object-position: center top; }
 
     /* Real image — swap in when you upload charts to repo */
     .project-preview img {
@@ -909,10 +917,9 @@
 
         <!-- House Price Prediction -->
         <div class="project-card purple reveal">
-          <!-- IMAGE PREVIEW — swap src to "chart1_eda.png" once uploaded to repo -->
           <div class="project-preview">
             <img src="chart1_eda.png" alt="House Price EDA Dashboard"
-              onerror="this.style.display='none'; this.parentElement.style.background='linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #1a0a2e 100%)'; this.parentElement.innerHTML += '<div style=\'position:absolute;inset:0;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:0.5rem;\'><div style=\'font-size:2.5rem;\'>📊</div><div style=\'font-size:0.75rem;color:#7c88a0;letter-spacing:0.1em;text-transform:uppercase;\'>EDA · Model Comparison · Predictions</div></div>'">
+              onerror="this.style.display='none'; this.parentElement.style.background='linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #1a0a2e 100%)'; this.parentElement.innerHTML += '&lt;div style=&quot;position:absolute;inset:0;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:0.5rem;&quot;&gt;&lt;div style=&quot;font-size:2.5rem;&quot;&gt;📊&lt;/div&gt;&lt;div style=&quot;font-size:0.75rem;color:#7c88a0;letter-spacing:0.1em;text-transform:uppercase;&quot;&gt;EDA · Model Comparison · Predictions&lt;/div&gt;&lt;/div&gt;'">
           </div>
           <div class="project-body">
             <div class="project-left">
@@ -963,59 +970,109 @@
           </div>
         </div>
 
-        <!-- Book Sales -->
-        <div class="project-card cyan reveal">
-          <!-- IMAGE PREVIEW — swap src to "fig1_trends_genre.png" once uploaded to repo -->
+        <!-- Portfolio Optimization -->
+        <div class="project-card green reveal">
           <div class="project-preview">
-            <img src="fig1_trends_genre.png" alt="Book Sales Analytics Dashboard"
-              onerror="this.style.display='none'; this.parentElement.style.background='linear-gradient(135deg, #0a1e2e 0%, #0d2233 50%, #0a1a2a 100%)'; this.parentElement.innerHTML += '<div style=\'position:absolute;inset:0;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:0.5rem;\'><div style=\'font-size:2.5rem;\'>📚</div><div style=\'font-size:0.75rem;color:#7c88a0;letter-spacing:0.1em;text-transform:uppercase;\'>Genre Trends · Pricing · Revenue</div></div>'">
+            <img src="chart1_crash%20(1).png" alt="Portfolio Optimization Crash Analysis"
+              onerror="this.style.display='none'; this.parentElement.style.background='linear-gradient(135deg, #0f2217 0%, #102a1d 50%, #0b1a12 100%)'; this.parentElement.innerHTML += '&lt;div style=&quot;position:absolute;inset:0;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:0.5rem;&quot;&gt;&lt;div style=&quot;font-size:2.5rem;&quot;&gt;📈&lt;/div&gt;&lt;div style=&quot;font-size:0.75rem;color:#7c88a0;letter-spacing:0.1em;text-transform:uppercase;&quot;&gt;Risk · Returns · Optimization&lt;/div&gt;&lt;/div&gt;'">
           </div>
           <div class="project-body">
             <div class="project-left">
               <div class="project-tag-row">
-                <span class="project-type cyan">Data Analytics</span>
-                <span class="project-chip">3 Dashboards</span>
-                <span class="project-chip">12 Charts</span>
-                <span class="project-chip">Power BI</span>
+                <span class="project-type green">Finance Analytics</span>
+                <span class="project-chip">10,000 Simulations</span>
+                <span class="project-chip">5 Stocks</span>
+                <span class="project-chip">Sharpe 2.5</span>
               </div>
-              <h3 class="project-title">Book Sales Analytics &amp; Visualization</h3>
+              <h3 class="project-title">Financial Data Analysis &amp; Portfolio Optimization</h3>
               <p class="project-desc">
-                Exploratory data analysis on a 1,000+ title book sales dataset, surfacing genre
-                trends, author performance, pricing dynamics, and publisher revenue patterns.
-                Produced 3 multi-panel visualization dashboards and an interactive Power BI report
-                with findings that challenge conventional assumptions.
+                Analyzed 5 years of Big Tech stock performance across AAPL, GOOGL, MSFT, AMZN, and META,
+                including drawdowns during the COVID crash, volatility regimes, and recovery patterns.
+                Simulated 10,000 portfolio combinations to construct the efficient frontier and identify
+                the allocation with the strongest risk-adjusted return.
               </p>
               <div class="project-metrics">
                 <div class="metric">
-                  <span class="metric-val cyan">r = 0.92</span>
-                  <span class="metric-label">Sales-to-revenue correlation</span>
+                  <span class="metric-val green">10,000</span>
+                  <span class="metric-label">Portfolio simulations</span>
                 </div>
                 <div class="metric">
-                  <span class="metric-val cyan">19,875</span>
-                  <span class="metric-label">Avg units — children's books</span>
+                  <span class="metric-val green">~2.5</span>
+                  <span class="metric-label">Optimal Sharpe ratio</span>
                 </div>
                 <div class="metric">
-                  <span class="metric-val cyan">76.8%</span>
-                  <span class="metric-label">Catalogue share — genre fiction</span>
+                  <span class="metric-val green">+27%</span>
+                  <span class="metric-label">Vs equal-weight final value</span>
                 </div>
               </div>
               <div class="project-tags">
                 <span class="tag">Python</span>
                 <span class="tag">Pandas</span>
+                <span class="tag">NumPy</span>
                 <span class="tag">Matplotlib</span>
                 <span class="tag">Seaborn</span>
-                <span class="tag">Power BI</span>
-                <span class="tag">EDA</span>
+                <span class="tag">Scikit-learn</span>
+                <span class="tag">yfinance</span>
                 <span class="tag">Jupyter</span>
               </div>
             </div>
           </div>
           <div style="padding: 0 2rem 1.75rem; position:relative; z-index:1;">
-            <a href="https://github.com/topeokubanjo-eng/Book-Sales-Data-Analysis" target="_blank" class="project-link">View Repo ↗</a>
+            <a href="https://github.com/topeokubanjo-eng/Financial-Data-Analysis-Portfolio-Optimization-2019-2024-" target="_blank" class="project-link">View Repo ↗</a>
           </div>
         </div>
 
-        <!-- Full Stack — REMOVED -->
+        <!-- Earnings Alpha -->
+        <div class="project-card cyan reveal">
+          <div class="project-preview">
+            <img src="03_model_performance.png" alt="Earnings Alpha Model Performance"
+              onerror="this.style.display='none'; this.parentElement.style.background='linear-gradient(135deg, #0f1c24 0%, #102733 50%, #0d1720 100%)'; this.parentElement.innerHTML += '&lt;div style=&quot;position:absolute;inset:0;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:0.5rem;&quot;&gt;&lt;div style=&quot;font-size:2.5rem;&quot;&gt;📉&lt;/div&gt;&lt;div style=&quot;font-size:0.75rem;color:#7c88a0;letter-spacing:0.1em;text-transform:uppercase;&quot;&gt;Earnings · Classification · Alpha Signal&lt;/div&gt;&lt;/div&gt;'">
+          </div>
+          <div class="project-body">
+            <div class="project-left">
+              <div class="project-tag-row">
+                <span class="project-type cyan">Financial ML</span>
+                <span class="project-chip">4 Models</span>
+                <span class="project-chip">50 Stocks</span>
+                <span class="project-chip">12 Quarters</span>
+              </div>
+              <h3 class="project-title">Earnings Alpha — Predicting Earnings Surprise Direction</h3>
+              <p class="project-desc">
+                Built a machine learning pipeline to predict whether S&amp;P 500 companies would beat or miss
+                analyst earnings expectations using financial, market, and analyst revision data.
+                Converted model predictions into a ranked signal to test whether higher-confidence names
+                produced stronger realized earnings outcomes.
+              </p>
+              <div class="project-metrics">
+                <div class="metric">
+                  <span class="metric-val cyan">0.618</span>
+                  <span class="metric-label">ROC AUC on unseen data</span>
+                </div>
+                <div class="metric">
+                  <span class="metric-val cyan">0.734</span>
+                  <span class="metric-label">Average precision</span>
+                </div>
+                <div class="metric">
+                  <span class="metric-val cyan">27</span>
+                  <span class="metric-label">Engineered features</span>
+                </div>
+              </div>
+              <div class="project-tags">
+                <span class="tag">Python</span>
+                <span class="tag">Pandas</span>
+                <span class="tag">NumPy</span>
+                <span class="tag">Scikit-learn</span>
+                <span class="tag">XGBoost</span>
+                <span class="tag">Matplotlib</span>
+                <span class="tag">yfinance</span>
+                <span class="tag">Jupyter</span>
+              </div>
+            </div>
+          </div>
+          <div style="padding: 0 2rem 1.75rem; position:relative; z-index:1;">
+            <a href="https://github.com/topeokubanjo-eng/Company-Earnings-Prediction-Model" target="_blank" class="project-link">View Repo ↗</a>
+          </div>
+        </div>
 
       </div>
     </div>
@@ -1045,7 +1102,7 @@
           <div class="about-card">
             <div class="about-card-icon">📍</div>
             <div class="about-card-title">Edmonton, AB</div>
-            <div class="about-card-text">Open to remote &amp; hybrid roles</div>
+            <div class="about-card-text">Open to Relocation & Remote Roles</div>
           </div>
           <div class="about-card">
             <div class="about-card-icon">💼</div>
@@ -1078,7 +1135,10 @@
             <span class="skill-pill">Python</span>
             <span class="skill-pill">SQL</span>
             <span class="skill-pill">R</span>
+            <span class="skill-pill">HTML</span>
             <span class="skill-pill">DAX</span>
+            <span class="skill-pill">CSS</span>
+            <span class="skill-pill">Java</span>
           </div>
         </div>
         <div class="skill-group reveal">
